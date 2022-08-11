@@ -4,7 +4,7 @@
 このレポジトリには、スレの皆様が結果をアップロードすることが可能です。
 アップロードの手順は以下の通り
 
-・GitHubのサインイン方法(ボーダーを参照するだけならサインイン不要)
+A.GitHubのサインイン方法(ボーダーを参照するだけならサインイン不要)
   1.GitHubのトップページにアクセス https://github.com/
   2.右上のSign in (Sign upではない)を選ぶ
   3.ログイン画面になるので、以下を入力
@@ -12,7 +12,7 @@
     Password:Thre○○○○
     ※○○○○は数字4桁(伝説のスレ番号)
 
-・アップロードに必要なトークンを入手
+B.アップロードに必要なトークンを入手
   1.GitHubにログインした状態で、右上のベルのアイコンが並んでいる一番右側のドロップダウンから「Settings」を選ぶ
   2.左側ペインの一番下「Developer settings」を選択
   3.左側ペインの一番下「Personal access tokens」を選択
@@ -24,13 +24,13 @@
   6.一番下の「Generate token」を押す
   7.画面にトークンが表示されるのでコピっておく(この後のアップロードで必要。ページ遷移すると消えてしまう)
 
-・これ以下の手順では、gitコマンドを使用することが前提
+C.これ以下の手順では、gitコマンドを使用することが前提
   1.ローカルアカウント名(GitHubのアカウントとは非連動)とメールアドレスの設定
     デレスレGitHubにいつも自分が使ってるローカルアカウントとメールアドレスを上げたくない場合は以下を設定
     git config --global user.name "任意のアカウント名"
     git config --global user.email "任意のメールアドレス"
 
-・いったんレポジトリをダウンロード
+D.いったんレポジトリをダウンロード
   1.任意のディレクトリで
     git clone https://github.com/derethread/score-border.git
     と入力。リポジトリ内容がダウンロードされる
@@ -41,11 +41,19 @@
     git add コピーしたボーダーファイル名.txt
   5.コミット
     git commit -m 'コミット時のコメント'
-  6.アップロードするレポジトリを指定
+  6.アップロードするレポジトリを指定(初回のみ)
     git remote add origin https://github.com/derethread/score-border.git
   7.アップロード
     git push -u origin main
     Username for 'https://github.com': derethread
     Password for 'https://derethread@github.com': 上で入手したトークン
+
+E.次回以降ファイルをアップロードする場合には最初にレポジトリから更新済みファイルを取り寄せて同期する
+  1.レポジトリのpull
+    ボーダーをアップロードした場所に移動し
+    git pull
+  2.その後、アップロードファイルをコピーするD.3以降を実施する
+    ※ただしD.6は実施しない
+
 
 ここのファイルはUTF-8で記載しています。
